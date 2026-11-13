@@ -18,7 +18,6 @@ WORKDIR /app
 # Código, binário do desafio e scripts de validação.
 COPY zerostorage ./
 COPY exploit.py ./
-COPY validation/ ./validation/
 
 # Loader + libc 2.19 já extraídos (substituem o setup_219.sh).
 COPY lib/ ./lib/
