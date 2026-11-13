@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-# As libs 2.19 já entram na imagem a partir de ./lib.
+# As libs 2.19 entram na imagem a partir de ./lib.
 FROM python:3.12-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1 \
@@ -15,11 +15,11 @@ RUN python3 -m pip install --no-cache-dir pwntools unicorn pyelftools
 
 WORKDIR /app
 
-# Código, binário do desafio e scripts de validação.
+# Código, binário do desafio.
 COPY zerostorage ./
 COPY exploit.py ./
 
-# Loader + libc 2.19 já extraídos (substituem o setup_219.sh).
+# Loader + libc 2.19 já extraídos
 COPY lib/ ./lib/
 
 # Confere a libc e o loader em tempo de build.
